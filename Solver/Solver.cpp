@@ -61,7 +61,7 @@ Solution Solve(const std::vector<Variable> &Variables, const std::vector<Constra
 		const State Seed = *Pending.top();
 
 		if (SolverVerbose)
-			std::cout << "Pending: " << Pending.size() << "    Visited: " << Visited.size() << "    Generated: " << Generated << "    Greatest Fitness: " << std::setprecision(10) << Seed.Fitness << std::endl;
+			std::cout << "Pending: " << Pending.size() << "    Visited: " << Visited.size() << "    Generated: " << Generated << "    Greatest Fitness: " << std::setprecision(20) << Seed.Fitness << std::endl;
 
 		Pending.pop();
 		for (unsigned int x = 0; x < Seed.Variables.size(); x++)

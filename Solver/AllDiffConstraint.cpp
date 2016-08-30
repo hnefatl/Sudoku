@@ -38,5 +38,12 @@ bool AllDiffConstraint::_Enforce(std::vector<Variable> &StateVariables, std::set
 		}
 	}
 
+	std::set<unsigned int> UnionDomain;
+	for (unsigned int x = 0; x < Variables.size(); x++)
+		UnionDomain.insert(StateVariables[Variables[x]].Domain.begin(), StateVariables[Variables[x]].Domain.end());
+
+	if (UnionDomain.size() < Variables.size())
+		return false;
+
 	return true;
 }
